@@ -71,4 +71,18 @@ export class AppService {
 
     return tweetsWithAvatar;
   }
+
+  getTweetsByUsername(username: string): TweetWithAvatar[] {
+    const userTweets = this.tweets.filter(
+      (tweet) => tweet.username === username,
+    );
+
+    return userTweets.map((tweet) => {
+      const tweetUser = this.users.find(
+        (user) => user.username === tweet.username,
+      );
+      
+      return new TweetWithAvatar(tweet.username,tweetUser.avatar,tweet.tweet);
+    });
+  }
 }

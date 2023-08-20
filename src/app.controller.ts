@@ -6,6 +6,7 @@ import {
   HttpStatus,
   Body,
   Query,
+  Param
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateUserDto } from './dtos/user.dtos';
@@ -35,7 +36,14 @@ export class AppController {
   }
 
   @Get('tweets')
-  getTweets(@Query('page') page: number | null): TweetWithAvatar[]  {
+  @HttpCode(HttpStatus.OK)
+  getTweets(@Query('page') page: number | null): TweetWithAvatar[] {
     return this.appService.getTweets(page);
+  }
+
+  @Get('tweets/:username')
+  @HttpCode(HttpStatus.OK)
+  getTweetsByUsername(@Param('username') username: string): TweetWithAvatar[] {
+    return this.appService.getTweetsByUsername(username);
   }
 }
