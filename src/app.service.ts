@@ -1,8 +1,13 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  Injectable,
+  UnauthorizedException,
+  BadRequestException,
+} from '@nestjs/common';
 import { User } from './entities/user.entity';
 import { Tweet } from './entities/tweet.entity';
 import { CreateUserDto } from './dtos/user.dtos';
 import { CreateTweetDto } from './dtos/tweet.dtos';
+import { TweetWithAvatar } from './entities/tweet.entity';
 
 @Injectable()
 export class AppService {
@@ -41,5 +46,29 @@ export class AppService {
 
     const newTweet = new Tweet(username, tweet);
     return this.tweets.push(newTweet);
+  }
+
+  getTweets(page: number | null): TweetWithAvatar[] {
+    if (!page) {
+      page = 1;
+    }
+
+    if (isNaN(page) || page < 1) {
+      throw new BadRequestException('Please enter a valid page!');
+    }
+
+    const tweetsPerPage = 15;
+    const startIndex = (page - 1) * tweetsPerPage;
+    const endIndex = startIndex + tweetsPerPage;
+    const latestTweets = this.tweets.slice(startIndex, endIndex);
+
+    const tweetsWithAvatar = latestTweets.map((tweet) => {
+      const tweetUser = this.users.find(
+        (user) => user.username === tweet.username,
+      );
+      return new TweetWithAvatar(tweet.username, tweetUser.avatar, tweet.tweet);
+    });
+
+    return tweetsWithAvatar;
   }
 }
