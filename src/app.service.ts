@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { User } from './entities/user.entity';
 import { Tweet } from './entities/tweet.entity';
 import { CreateUserDto } from './dtos/user.dtos';
+import { CreateTweetDto } from './dtos/tweet.dtos';
 
 @Injectable()
 export class AppService {
@@ -28,5 +29,17 @@ export class AppService {
   createUser(body: CreateUserDto) {
     const user = new User(body.username, body.avatar);
     return this.users.push(user);
+  }
+
+  createTweet(body: CreateTweetDto) {
+    const { username, tweet } = body;
+
+    const tweetUser = this.users.find((user) => user.username === username);
+    if (!tweetUser) {
+      throw new UnauthorizedException('Username has not previously sign-up');
+    }
+
+    const newTweet = new Tweet(username, tweet);
+    return this.tweets.push(newTweet);
   }
 }
