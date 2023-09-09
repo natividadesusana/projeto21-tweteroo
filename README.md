@@ -1,3 +1,61 @@
+# Tweteroo NestJS API
+
+The Tweteroo NestJS API is a simple social media API that allows users to create accounts, post tweets, and view other users' tweets. This project was developed with the aim of creating a scalable and robust web application using the NestJS framework.
+
+# ℹ️ About
+Tweteroo was developed with the following main features:
+
+- User registration and account creation.
+- Posting tweets.
+- View tweets from other users.
+- Pagination support to view more tweets.
+
+Motivation: The idea behind Tweteroo was to create a simple social media API that could be used as a foundation for more complex projects. The focus was to understand and implement NestJS principles to create a scalable back-end application.
+
+Next steps:
+
+- Implement user authentication.
+- Add support for likes and retweets.
+- Develop a friendly user interface.
+
+# 🛠️ Technologies Used
+
+![NestJS](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)&nbsp;
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)&nbsp;
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
+
+# ⚙️ How to Run
+Follow these steps to download and configure the project locally:
+
+1. Clone the GitHub repository:
+git clone https://github.com/natividadesusana/tweteroo-nestjs-API.git
+
+2. Access the project directory:
+cd tweteroo-nestjs-api
+
+3. Install dependencies:
+npm install
+
+4. Configure the MongoDB database in the src/config/database.config.ts file.
+
+5. Start the server:
+npm run start
+
+The API will be available at http://localhost:3000. Be sure to follow the MongoDB configuration instructions and set the appropriate environment variables if necessary.
+
+# 🖇 Contributing
+Feel free to contribute to the development of this project. Just follow the steps below:
+
+- Create a fork of this repository.
+- Create a branch for your new feature: git checkout -b my-new-feature.
+- Make the necessary changes and commit them: git commit -m 'I added a new feature'.
+- Push changes to your fork: git push origin my-new-feature.
+- Create a pull request on this repository.
+
+Happy coding! 🚀
+
+<hr>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -61,12 +119,6 @@ $ npm run test:cov
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
