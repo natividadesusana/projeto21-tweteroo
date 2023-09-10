@@ -2,7 +2,7 @@
 
 The Tweteroo NestJS API is a simple social media API that allows users to create accounts, post tweets, and view other users' tweets. This project was developed with the aim of creating a scalable and robust web application using the NestJS framework.
 
-# ℹ️ About
+## ℹ️ About
 Tweteroo was developed with the following main features:
 
 - User registration and account creation.
@@ -18,13 +18,13 @@ Next steps:
 - Add support for likes and retweets.
 - Develop a friendly user interface.
 
-# 🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 ![NestJS](https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)&nbsp;
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)&nbsp;
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
 
-# ⚙️ How to Run
+## ⚙️ How to Run
 Follow these steps to download and configure the project locally:
 
 1. Clone the GitHub repository:
@@ -43,7 +43,7 @@ npm run start
 
 The API will be available at http://localhost:3000. Be sure to follow the MongoDB configuration instructions and set the appropriate environment variables if necessary.
 
-# 🖇 Contributing
+## 🖇 Contributing
 Feel free to contribute to the development of this project. Just follow the steps below:
 
 - Create a fork of this repository.
